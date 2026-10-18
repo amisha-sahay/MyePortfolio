@@ -3,13 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ecosystem Studies Reflections | Amisha Sahay</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Reflections | Amisha Sahay</title>
   <style>
-    /* Ecosystem Infographics & Placeholder Styling */
+    :root {
+      --sage-green: #6B8068;
+      --dark-sage: #233b32;
+      --cream-accent: #F1F0E8;
+      --text-color: #27352f;
+      --border-color: #dce3db;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #f5f5f2;
+      color: var(--text-color);
+      line-height: 1.75;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--dark-sage);
+      color: #ffffff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .brand {
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #c7d9bd;
+    }
+
+    /* Main heading */
+    .hero {
+      background: #dfe8dc;
+      padding: 65px 8% 55px;
+      border-bottom: 1px solid #ccd8cb;
+    }
+
+    .eyebrow {
+      color: #47684f;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.15;
+      margin: 15px 0;
+      color: var(--dark-sage);
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 19px;
+    }
+
+    .student-info {
+      margin-top: 22px;
+      color: #53675a;
+      font-size: 16px;
+    }
+
+    /* Main content */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 24px 70px;
+    }
+
+    .section-label {
+      color: #64816a;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+    }
+
+    /* Subject Accordion Styling */
+    .subject-accordion {
+      background: #ffffff;
+      border: 2px solid var(--sage-green);
+      border-radius: 12px;
+      margin-bottom: 35px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(35, 59, 50, 0.05);
+    }
+
+    .subject-accordion summary {
+      background-color: var(--sage-green);
+      color: #fff;
+      padding: 18px 25px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+    }
+
+    .subject-accordion summary:hover {
+      background-color: #5c755e;
+    }
+
+    .accordion-content {
+      padding: 30px;
+    }
+
+    /* Exclusive Background: Ecosystem Studies (est.jpg) */
+    .ecosystem-section-bg {
+      position: relative;
+      background: linear-gradient(rgba(244, 241, 234, 0.92), rgba(244, 241, 234, 0.92)), url('assets/images/est.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Exclusive Background: Fundamentals of Geospatial Science (satellite_imagery.jpg) */
+    .geospatial-section-bg {
+      position: relative;
+      background: linear-gradient(rgba(35, 59, 50, 0.88), rgba(35, 59, 50, 0.88)), url('assets/satellite_imagery.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #f5f5f2;
+    }
+
+    .geospatial-section-bg .section-label {
+      color: #c7d9bd;
+    }
+
+    .geospatial-section-bg h2, 
+    .geospatial-section-bg h3 {
+      color: #ffffff;
+    }
+
+    /* Standard Cards & Elements */
+    .section-card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 28px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(35, 59, 50, 0.04);
+    }
+
+    .geospatial-section-bg .section-card {
+      background: #ffffff;
+      color: var(--text-color);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 15px;
+    }
+
+    .grid-item {
+      background: var(--cream-accent);
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
     .infographic-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
       margin: 20px 0;
     }
@@ -20,16 +208,6 @@
       border-radius: 12px;
       padding: 15px;
       text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .info-icon {
-      font-size: 2rem;
-      margin-bottom: 8px;
     }
 
     .pyramid-container {
@@ -76,7 +254,7 @@
 
     .pdf-viewer-box {
       width: 100%;
-      height: 500px;
+      height: 450px;
       border: 2px solid var(--sage-green);
       border-radius: 12px;
       margin-top: 15px;
@@ -87,910 +265,419 @@
       border-left: 4px solid var(--sage-green);
       padding: 20px;
       border-radius: 8px;
-      margin-bottom: 25px;
-    }
-    
-    /* Subject Accordion Styling */
-    .subject-accordion {
-      background: var(--cream-accent);
-      border: 2px solid var(--sage-green);
-      border-radius: 12px;
       margin-bottom: 20px;
-      overflow: hidden;
-      transition: all 0.3s ease;
     }
 
-    .subject-accordion summary {
-      background-color: #6B8068;
-      color: #fff;
-      padding: 15px 20px;
-      font-size: 1.2rem;
+    /* Reflection cards grid for Geospatial course */
+    .reflection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .reflection-card {
+      background: #ffffff;
+      padding: 28px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(35, 59, 50, 0.08);
+      color: var(--text-color);
+    }
+
+    .number {
+      color: #6d886f;
+      font-size: 15px;
+      letter-spacing: 2px;
       font-weight: bold;
-      cursor: pointer;
-      outline: none;
-      user-select: none;
     }
 
-    .subject-accordion summary:hover {
-      background-color: #5c755e;
+    .learning-note {
+      background: #edf3eb;
+      border-left: 3px solid #64816a;
+      padding: 12px 15px;
+      margin-top: 18px;
+      font-size: 16px;
+      color: var(--text-color);
     }
 
-    .accordion-content {
-      padding: 20px;
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 20px;
     }
 
-    /* Exclusive Background Image Styling for Ecosystem Studies Content Area */
-    .ecosystem-section-bg {
-      position: relative;
-      background: linear-gradient(rgba(244, 241, 234, 0.90), rgba(244, 241, 234, 0.90)), url('assets/images/est.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 8px;
+    .evidence-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      color: var(--text-color);
+    }
+
+    .evidence-item img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #e5e8e2;
+    }
+
+    .evidence-caption {
+      padding: 18px 20px;
+    }
+
+    /* Placeholder style for pending courses */
+    .pending-content {
+      text-align: center;
+      padding: 40px 20px;
+      color: #53675a;
+      font-style: italic;
+    }
+
+    /* Mobile layout adjustments */
+    @media (max-width: 700px) {
+      .grid-container, 
+      .reflection-grid, 
+      .evidence-grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        padding: 15px 5%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Floating Navigation Bar for Subjects -->
-  <header class="navbar-container">
-    <nav class="navbar">
-      <div class="logo">AS</div>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="brand">AS. | Geoinformatics</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#ecosystem-section">Ecosystem Studies</a></li>
-        <li><a href="#gis-section">GIS & Remote Sensing</a></li>
-        <li><a href="#cartography-section">Cartography</a></li>
+        <li><a href="#ecosystem">Ecosystem Studies</a></li>
+        <li><a href="#geospatial">Geospatial Science</a></li>
+        <li><a href="#statistical">Statistical Studies</a></li>
+        <li><a href="#techniques">Geospatial Techniques</a></li>
+        <li><a href="#remote-sensing">Remote Sensing</a></li>
+        <li><a href="#programming">Programming in GIS</a></li>
       </ul>
     </nav>
   </header>
 
-  <main style="max-width: 1100px; margin: 20px auto; padding: 0 15px;">
-    <details class="subject-accordion" open>
+  <!-- Page Introduction Hero -->
+  <header class="hero">
+    <div class="eyebrow">MSc Geoinformatics · Semester Reflections</div>
+    <h1>Learning to See<br>Beyond the Map.</h1>
+    <p>
+      Comprehensive reflections across core courses, exploring ecological dynamics, geospatial analysis, field methodologies, and critical technological integration.
+    </p>
+    <div class="student-info">
+      <strong>Amisha Sahay</strong> · Bharati Vidyapeeth University, Pune
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= 1. ECOSYSTEM STUDIES ================= -->
+    <details class="subject-accordion" id="ecosystem" open>
       <summary>🌱 Ecosystem Studies (EST 1101) - Reflections</summary>
-      <!-- Ecosystem background applied exclusively to the accordion content wrapper -->
-      <div class="accordion-content ecosystem-section-bg"> 
-     
-        <!-- Hero Section -->
-        <section class="hero-section" id="home">
-          <div class="profile-card">
-            <h1 class="profile-name">Ecosystem Studies</h1>
-            <p class="profile-title">EST 1101 ePortfolio Reflections</p>
-            <p class="subtitle">ECOLOGY • EVOLUTION • CONSERVATION</p>
-          </div>
-        </section>
+      <div class="accordion-content ecosystem-section-bg">
         
-        <!-- Section 1: Conceptual Understanding & Dynamics -->
-        <section class="content-section" id="concepts">
-          <div class="section-card">
-            <h2>1. Conceptual Understanding & Dynamics</h2>
-            <p>Reflecting on structure-function relationships in ecosystem ecology, trophic energy transfers, and biogeochemical nutrient cycling.</p>
-            
-            <div class="grid-container" style="margin-top: 20px;">
-              <div class="grid-item">
-                <h3>Diversity & Richness</h3>
-                <p><strong>Diversity:</strong> Refers to species abundance and evenness.<br>
-                <strong>Richness:</strong> Refers to the total number of distinct species in a given community.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Holdridge Life Zone & Classification</h3>
-                <p>Global forest classifications utilize indices like the Holdridge Life Zone model, governed by <em>Annual Precipitation, Humidity, and Temperature</em>. Higher environmental thresholds set limits, while lower values restrict species availability.</p>
-              </div>
+        <div class="section-card">
+          <div class="section-label">Module Overview</div>
+          <h2 style="color:var(--dark-sage); margin-bottom: 10px;">Ecology, Evolution & Conservation Dynamics</h2>
+          <p>Reflecting on structure-function relationships in ecosystem ecology, trophic energy transfers, and biogeochemical nutrient cycling.</p>
+        </div>
+        
+        <!-- Section: Conceptual Understanding -->
+        <div class="section-card">
+          <h2>1. Conceptual Understanding & Dynamics</h2>
+          <div class="grid-container">
+            <div class="grid-item">
+              <h3>Diversity & Richness</h3>
+              <p><strong>Diversity:</strong> Refers to species abundance and evenness.<br>
+              <strong>Richness:</strong> Refers to the total number of distinct species in a given community.</p>
             </div>
-            
-            <h3 style="margin-top:20px; color:var(--dark-sage);">Infographic: Trophic Energy Flow</h3>
-            <div class="pyramid-container">
-              <div class="pyramid-level level-apex">Tertiary Consumers (10 J)</div>
-              <div class="pyramid-level level-mid">Secondary Consumers (100 J)</div>
-              <div class="pyramid-level level-mid" style="width: 80%; background: #718870;">Primary Consumers (1,000 J)</div>
-              <div class="pyramid-level level-base">Primary Producers (10,000 J)</div>
-            </div>
-            <p style="font-size: 0.9rem; text-align: center; color: var(--dark-sage);"><em>Figure: 10% Energy Transfer Efficiency across Terrestrial Trophic Levels.</em></p>
-          </div>
-        </section>
-
-        <!-- Section 2: Evolution, Speciation & Relicts -->
-        <section class="content-section" id="evolution">
-          <div class="section-card">
-            <h2>2. Evolution, Speciation & Relict Species</h2>
-            <p>Exploring how evolutionary pressures, genetic variations, and geological isolation shape biodiversity patterns.</p>
-
-            <div class="grid-container" style="margin-top: 20px;">
-              <div class="grid-item">
-                <h3>Speciation Mechanisms</h3>
-                <p><strong>Allopatric Speciation:</strong> Physical/geographic barriers isolate populations, causing them to evolve differently.<br>
-                <strong>Peripatric & Parapatric:</strong> Speciation across specific peripheral niches or adjacent borders.<br>
-                <strong>Sympatric Speciation:</strong> New species arise within the same geographic region due to environmental gradients, food specialization, or accidental mutations.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Types of Relicts</h3>
-                <p><strong>Taxonomic Relict:</strong> Only a specific subset of a lineage survives while relatives go extinct due to climatic pressures.<br>
-                <strong>Geographic Relict:</strong> Species formerly widespread now restricted to small isolated pockets.<br>
-                <strong>Climatic Relict:</strong> Persistence driven by microclimate controls.</p>
-              </div>
+            <div class="grid-item">
+              <h3>Holdridge Life Zone & Classification</h3>
+              <p>Global forest classifications utilize indices like the Holdridge Life Zone model, governed by <em>Annual Precipitation, Humidity, and Temperature</em>.</p>
             </div>
           </div>
-        </section>
+          
+          <h3 style="margin-top:25px; color:var(--dark-sage);">Infographic: Trophic Energy Flow</h3>
+          <div class="pyramid-container">
+            <div class="pyramid-level level-apex">Tertiary Consumers (10 J)</div>
+            <div class="pyramid-level level-mid">Secondary Consumers (100 J)</div>
+            <div class="pyramid-level level-mid" style="width: 80%; background: #718870;">Primary Consumers (1,000 J)</div>
+            <div class="pyramid-level level-base">Primary Producers (10,000 J)</div>
+          </div>
+          <p style="font-size: 0.9rem; text-align: center; color: var(--dark-sage);"><em>Figure: 10% Energy Transfer Efficiency across Terrestrial Trophic Levels.</em></p>
+        </div>
 
-        <!-- Section 3: Biogeography, Plate Tectonics & Biodiversity Patterns -->
-        <section class="content-section" id="biogeography">
-          <div class="section-card">
-            <h2>3. Biogeography & Biodiversity Patterns</h2>
-            <p>Understanding how Earth's tectonic dynamics and environmental stability govern species distribution across horizontal and vertical gradients.</p>
-
-            <div class="grid-container" style="margin-top: 20px;">
-              <div class="grid-item">
-                <h3>Continental Drift & Plate Boundaries</h3>
-                <p>Alfred Wegener's Continental Drift theory and plate tectonic boundaries dictate global biodiversity distribution and mountain formation.</p>
-              </div>
-              <div class="grid-item">
-                <h3>Environmental Stability & Gradients</h3>
-                <p>Biodiversity patterns are primarily driven by environmental stability. Unstable vs. stable biogeographic factors establish distinct horizontal and vertical species gradients.</p>
-              </div>
+        <!-- Section: Evolution & Speciation -->
+        <div class="section-card">
+          <h2>2. Evolution, Speciation & Relict Species</h2>
+          <div class="grid-container">
+            <div class="grid-item">
+              <h3>Speciation Mechanisms</h3>
+              <p><strong>Allopatric:</strong> Geographic barriers isolate populations.<br>
+              <strong>Peripatric & Parapatric:</strong> Peripheral niches or adjacent borders.<br>
+              <strong>Sympatric:</strong> Speciation within the same region via environmental gradients.</p>
+            </div>
+            <div class="grid-item">
+              <h3>Types of Relicts</h3>
+              <p><strong>Taxonomic:</strong> Surviving lineages while relatives go extinct.<br>
+              <strong>Geographic:</strong> Formerly widespread, now restricted.<br>
+              <strong>Climatic:</strong> Persistence driven by microclimate controls.</p>
             </div>
           </div>
-        </section>
+        </div>
 
-        <!-- Section 4: Field Work Observations -->
-        <section class="content-section" id="fieldwork">
-          <div class="section-card">
-            <h2>4. Field Work Observations & Ecosystem Comparisons</h2>
-            <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.7;">
-              Through our field visits we got a clearer picture of three very different ecosystems, understanding their main characteristics, adaptations, and threats.
-            </p>
+        <!-- Section: Biogeography -->
+        <div class="section-card">
+          <h2>3. Biogeography & Biodiversity Patterns</h2>
+          <div class="grid-container">
+            <div class="grid-item">
+              <h3>Continental Drift & Plate Tectonics</h3>
+              <p>Wegener's drift theory and boundaries dictate global biodiversity distribution and mountain formation.</p>
+            </div>
+            <div class="grid-item">
+              <h3>Environmental Stability & Gradients</h3>
+              <p>Driven by environmental stability, establishing distinct horizontal and vertical species gradients.</p>
+            </div>
+          </div>
+        </div>
 
-            <div style="margin-top: 30px;">
-              <!-- Part A: Pashan Lake -->
-              <div class="site-subcard">
-                <h3 style="color: var(--dark-sage); margin-bottom: 10px;">A. Pashan Lake (Wetland & Aquatic Ecosystem)</h3>
-                <p>Pashan lake is an artificial lake that serves as a rich ecological hotspot for various migratory birds.</p>
-                <p><strong>Main Characteristics:</strong> An artificial wetland/reservoir ecosystem characterized by shallow lentic waters and emergent aquatic macrophytes.</p>
-                <div class="media-placeholder" style="padding: 10px; text-align: center;">
-                  <img src="assets/images/p1.png" width="50%" alt="Pashan Lake Field Photo" style="border-radius: 8px; display: inline-block;" />
-                </div>
+        <!-- Section: Field Work Observations -->
+        <div class="section-card">
+          <h2>4. Field Work Observations & Ecosystem Comparisons</h2>
+          <p style="margin-top: 10px;">Evaluating three distinct ecosystems, their adaptations, and environmental vulnerabilities:</p>
+          
+          <div style="margin-top: 20px;">
+            <div class="site-subcard">
+              <h3 style="color: var(--dark-sage); margin-bottom: 8px;">A. Pashan Lake (Wetland & Aquatic Ecosystem)</h3>
+              <p>An artificial wetland ecosystem characterized by shallow lentic waters and rich migratory bird habitats.</p>
+              <div class="media-placeholder">
+                <img src="assets/images/p1.png" width="50%" alt="Pashan Lake Field Photo" style="border-radius: 8px; display: inline-block;" />
               </div>
+            </div>
 
-              <!-- Part B: Mayureshwar Wildlife Sanctuary, Supe -->
-              <div class="site-subcard">
-                <h3 style="color: var(--dark-sage); margin-bottom: 10px;">B. Mayureshwar Wildlife Sanctuary, Supe (Grassland Ecosystem)</h3>
-                <p>The grassland ecosystem in Supe has loose top soil due to low rainfall and aridity along with basaltic rock below it which does not support major plants and trees due to its poor moisture retention making is highly vulnerable to soil erosion.</p> 
-                <div class="media-placeholder" style="padding: 10px; text-align: center; margin-bottom: 10px;">
-                  <img src="assets/images/s2.png" width="50%" alt="Supe Field Photo 1" style="border-radius: 8px; display: inline-block;" />
-                </div>
+            <div class="site-subcard">
+              <h3 style="color: var(--dark-sage); margin-bottom: 8px;">B. Mayureshwar Wildlife Sanctuary, Supe (Grassland Ecosystem)</h3>
+              <p>Grassland with loose topsoil and basaltic bedrock resulting in poor moisture retention and soil erosion risks.</p> 
+              <div class="media-placeholder">
+                <img src="assets/images/s2.png" width="50%" alt="Supe Field Photo" style="border-radius: 8px; display: inline-block;" />
               </div>
+            </div>
 
-              <!-- Part C: Mulshi -->
-              <div class="site-subcard">
-                <h3 style="color: var(--dark-sage); margin-bottom: 10px;">C. Mulshi (Montane Catchment & Forest Ecosystem)</h3>
-                <p>Mulshi catchment area is an ecologically rich region that collects rainfall to feed the Mulshi Dam on the Mula river.</p>
-                <div class="media-placeholder" style="padding: 10px; text-align: center;">
-                  <img src="assets/images/m1.png" width="50%" alt="Mulshi Field Photo 1" style="border-radius: 8px; display: inline-block;" />
-                </div>
+            <div class="site-subcard">
+              <h3 style="color: var(--dark-sage); margin-bottom: 8px;">C. Mulshi (Montane Catchment & Forest Ecosystem)</h3>
+              <p>Ecologically rich catchment area supplying vital water resources to the Mulshi Dam reservoir.</p>
+              <div class="media-placeholder">
+                <img src="assets/images/m1.png" width="50%" alt="Mulshi Field Photo" style="border-radius: 8px; display: inline-block;" />
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <!-- Section 5: Group Work -->
-        <section class="content-section" id="groupwork">
-          <div class="section-card">
-            <h2>5. Group Work & Collaborative Food Web Dynamics</h2>
-            <div style="background: var(--cream-accent); padding: 20px; border-radius: 10px; border-left: 4px solid var(--sage-green); margin-top: 15px; line-height: 1.7;">
-              <p>My group got the <strong>Desert Ecosystem</strong> where each member was assigned a role as primary producer or consumer to understand food web interdependence.</p>
-            </div>
+        <!-- Section: Group Work -->
+        <div class="section-card">
+          <h2>5. Group Work & Collaborative Food Web Dynamics</h2>
+          <div style="background: var(--cream-accent); padding: 15px; border-radius: 8px; border-left: 4px solid var(--sage-green);">
+            <p>Modeled primary producer and consumer roles within a <strong>Desert Ecosystem</strong> group activity to evaluate food web interdependence.</p>
           </div>
-        </section>
+        </div>
 
-        <!-- Section 6: Nilgiri Tahr -->
-        <section class="content-section" id="tahr">
-          <div class="section-card">
-            <h2>6. Nilgiri Tahr: Ecosystem Presentation & Reflection</h2>
-            <p>Special focus on montane grassland-shola ecosystems of the Western Ghats and conservation strategies for the endangered endemic <em>Nilgiri Tahr</em>.</p>
-            <iframe src="assets/images/nilgiri_tahr_reflection.pdf" class="pdf-viewer-box" title="Nilgiri Tahr Reflection PDF">
-              Your browser does not support PDFs. <a href="assets/images/nilgiri_tahr_reflection.pdf" target="_blank">Download the PDF</a>.
-            </iframe>
-          </div>
-        </section>
+        <!-- Section: Nilgiri Tahr -->
+        <div class="section-card">
+          <h2>6. Nilgiri Tahr: Ecosystem Presentation & Reflection</h2>
+          <p>Analysis of montane grassland-shola ecosystems of the Western Ghats and conservation strategies for the endangered endemic <em>Nilgiri Tahr</em>.</p>
+          <iframe src="assets/images/nilgiri_tahr_reflection.pdf" class="pdf-viewer-box" title="Nilgiri Tahr Reflection PDF">
+            Your browser does not support PDFs. <a href="assets/images/nilgiri_tahr_reflection.pdf" target="_blank">Download PDF</a>.
+          </iframe>
+        </div>
 
-        <!-- Section 7: Conservation Strategies -->
-        <section class="content-section" id="conservation">
-          <div class="section-card">
-            <h2>7. Conservation Strategies (In-situ & Ex-situ)</h2>
-            <p>Balancing habitat preservation and captive breeding to maximize genetic variation and species resilience.</p>
+        <!-- Section: Ecosystem Services -->
+        <div class="section-card">
+          <h2>7. Ecosystem Services & Economic Valuation</h2>
+          <div class="infographic-grid">
+            <div class="info-card"><div style="font-size:1.8rem;">🍎</div><strong>Provisioning</strong></div>
+            <div class="info-card"><div style="font-size:1.8rem;">🐝</div><strong>Regulating</strong></div>
+            <div class="info-card"><div style="font-size:1.8rem;">🌱</div><strong>Supporting</strong></div>
+            <div class="info-card"><div style="font-size:1.8rem;">🏞️</div><strong>Cultural</strong></div>
           </div>
-        </section> 
+          <div class="media-placeholder" style="margin-top: 15px;">
+            <img src="assets/images/esta.jpeg" width="50%" alt="Ecosystem Services Assessment" style="border-radius: 8px; display: inline-block;" />
+          </div>
+        </div>
 
-        <!-- Section 8: Ecosystem Services -->
-        <section class="content-section" id="services">
-          <div class="section-card">
-            <h2>8. Ecosystem Services & Economic Valuation</h2>
-            <div class="infographic-grid">
-              <div class="info-card"><div class="info-icon">🍎</div><strong>Provisioning</strong></div>
-              <div class="info-card"><div class="info-icon">🐝</div><strong>Regulating</strong></div>
-              <div class="info-card"><div class="info-icon">🌱</div><strong>Supporting</strong></div>
-              <div class="info-card"><div class="info-icon">🏞️</div><strong>Cultural</strong></div>
-            </div>
-            
-            <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.7;">
-              On our field visit we also collected data on different ecosystem services provided to us by different biotic and abiotic elements of nature and the chart below helped us to sub-categorize it according to the specific service provided by the mentioned natural element.
-            </p>
-            
-            <div class="media-placeholder" style="padding: 10px; text-align: center;">
-              <img src="assets/images/esta.jpeg" width="50%" alt="Ecosystem Services Assessment" style="border-radius: 8px; display: inline-block;" />
-            </div>
-          </div>
-        </section>
-
-        <!-- Section 9: SDG 15 Alignment -->
-        <section class="content-section" id="sdg">
-          <div class="section-card">
-            <div class="sdg-badge">SDG 15: Life on Land</div>
-            <h2>9. Alignment with Sustainable Development Goals</h2>
-            <p>Connecting coursework directly to international conservation mandates. The SDGs related to our course are:</p>
-            <p><strong>SDG 15 (Life on Land):</strong> It directly focuses on halting biodiversity loss, protecting terrestrial habitats, and ensuring the sustainable management and restoration of ecosystems.</p>
-            <p><strong>SDG 13 (Climate Action):</strong> It highlights the essential role of healthy forest and wetland ecosystems in capturing carbon and mitigating global climate change. (Targets 15.1 and 15.5).</p>
-          </div>
-        </section>
+        <!-- Section: SDG Alignment -->
+        <div class="section-card">
+          <div class="sdg-badge">SDG 15: Life on Land</div>
+          <h2>8. Alignment with Sustainable Development Goals</h2>
+          <p><strong>SDG 15 (Life on Land):</strong> Halting biodiversity loss and restoring terrestrial habitats.<br>
+          <strong>SDG 13 (Climate Action):</strong> Mitigating global change through healthy forest and wetland carbon sinks.</p>
+        </div>
 
       </div>
     </details>
+
+
+    <!-- ================= 2. FUNDAMENTALS OF GEOSPATIAL SCIENCE AND TECHNOLOGY ================= -->
+    <details class="subject-accordion" id="geospatial" open>
+      <summary>🛰️ Fundamentals of Geospatial Science and Technology (GEO 1102) - Reflections</summary>
+      <div class="accordion-content geospatial-section-bg">
+        
+        <div class="section-card">
+          <div class="section-label">Module Overview</div>
+          <h2>Learning to See Beyond the Map</h2>
+          <p style="margin-top: 8px;">
+            Exploring how GIS, cartography, field observations, and critical thinking shape our understanding of spatial information.
+          </p>
+        </div>
+
+        <!-- Reflection Entries Grid -->
+        <div class="reflection-grid">
+          <article class="reflection-card">
+            <div class="number">REFLECTION 01</div>
+            <h3 style="color:var(--dark-sage);">The Hidden Monsoon Jewel</h3>
+            <p>
+              Creating my StoryMap helped explore the relationship between Rugda mushrooms, Sal forests, and local livelihoods in Jharkhand, combining thematic maps with narrative design.
+            </p>
+            <div class="learning-note">
+              <strong>What changed?</strong>
+              I began to see cartography as a medium for communicating spatial relationships rather than just displaying static data.
+            </div>
+          </article>
+
+          <article class="reflection-card">
+            <div class="number">REFLECTION 02</div>
+            <h3 style="color:var(--dark-sage);">From Field Observations to Spatial Data</h3>
+            <p>
+              Field data collection via Epicollect and GPS introduced systematic recording standards, emphasizing that attribute accuracy underpins reliable spatial analytics.
+            </p>
+            <div class="learning-note">
+              <strong>What changed?</strong>
+              I developed a rigorous focus on location accuracy and data validation during early field workflows.
+            </div>
+          </article>
+
+          <article class="reflection-card">
+            <div class="number">REFLECTION 03</div>
+            <h3 style="color:var(--dark-sage);">Questioning AI-Generated Information</h3>
+            <p>
+              Evaluating AI-generated claims against scientific literature regarding mangrove loss revealed critical gaps, demonstrating why automated outputs require rigorous vetting.
+            </p>
+            <div class="learning-note">
+              <strong>What changed?</strong>
+              I treat AI as a supporting tool rather than a substitute for verified scientific literature and critical thinking.
+            </div>
+          </article>
+
+          <article class="reflection-card">
+            <div class="number">REFLECTION 04</div>
+            <h3 style="color:var(--dark-sage);">Learning Through Challenges</h3>
+            <p>
+              Recognized that software outputs are not automatically correct. Coordinate systems, data quality, and classification choices demand continuous logical verification.
+            </p>
+            <div class="learning-note">
+              <strong>My next step:</strong>
+              Systematically document intermediate steps and verify logical geographic consistency in all analyses.
+            </div>
+          </article>
+        </div>
+
+        <!-- Evidence of Learning -->
+        <div class="section-card" style="margin-top: 25px;">
+          <div class="section-label">Practical Evidence</div>
+          <h2>Evidence of My Learning</h2>
+          <div class="evidence-grid">
+            <div class="evidence-item">
+              <img src="images/rugda-storymap.png" alt="StoryMap Screenshot" loading="lazy">
+              <div class="evidence-caption">
+                <h3 style="color:var(--dark-sage);">StoryMap & Cartography</h3>
+                <p>Combining spatial layers with storytelling for environmental communication.</p>
+              </div>
+            </div>
+            <div class="evidence-item">
+              <img src="images/field-survey.png" alt="Field Survey" loading="lazy">
+              <div class="evidence-caption">
+                <h3 style="color:var(--dark-sage);">Field Data Collection</h3>
+                <p>Systematic coordinate capture and attribute schema organization.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </details>
+
+
+    <!-- ================= 3. STATISTICAL STUDIES ================= -->
+    <details class="subject-accordion" id="statistical">
+      <summary>📊 Statistical Studies - Reflections</summary>
+      <div class="accordion-content">
+        <div class="section-card">
+          <h2>Statistical Studies & Data Analysis</h2>
+          <div class="pending-content">
+            <p>Reflections, statistical worksheets, and ANOVA/F-test computational notes for this section will be added soon.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+
+    <!-- ================= 4. GEOSPATIAL TECHNIQUES ================= -->
+    <details class="subject-accordion" id="techniques">
+      <summary>🗺️ Geospatial Techniques - Reflections</summary>
+      <div class="accordion-content">
+        <div class="section-card">
+          <h2>Geospatial Techniques & GIS Workflows</h2>
+          <div class="pending-content">
+            <p>Documentation covering ArcGIS Pro workflows, spatial raster buffering, and vector overlay analysis is coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+
+    <!-- ================= 5. IMAGE INTERPRETATION IN REMOTE SENSING ================= -->
+    <details class="subject-accordion" id="remote-sensing">
+      <summary>🛰️ Image Interpretation in Remote Sensing - Reflections</summary>
+      <div class="accordion-content">
+        <div class="section-card">
+          <h2>Satellite Remote Sensing & Image Interpretation</h2>
+          <div class="pending-content">
+            <p>Reflections on Sentinel-2 true color composites, Landsat thermal infrared sensors, and LST/NDWI index calculations will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+
+    <!-- ================= 6. PROGRAMMING IN GIS ================= -->
+    <details class="subject-accordion" id="programming">
+      <summary>💻 Programming in GIS - Reflections</summary>
+      <div class="accordion-content">
+        <div class="section-card">
+          <h2>GIS Programming & Automation</h2>
+          <div class="pending-content">
+            <p>Documentation on spatial script automation and custom web e-portfolio deployment will be updated soon.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
   </main>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 30px; color: var(--dark-sage);">
-    <p>© 2026 Amisha Sahay | MSc Geoinformatics (EST 1101 Ecosystem Studies)</p>
+  <footer style="text-align: center; padding: 35px; color: var(--dark-sage); background: var(--cream-accent); border-top: 1px solid var(--border-color);">
+    <p>© 2026 Amisha Sahay | MSc Geoinformatics · Bharati Vidyapeeth University, Pune</p>
+    <p style="margin-top: 8px;"><a href="index.html" style="color: var(--dark-sage);">Return to Portfolio Home</a></p>
   </footer>
-</body>
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reflection | Amisha Sahay</title>
-
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: "Times New Roman", Times, serif;
-background: #f5f5f2;
-color: #27352f;
-line-height: 1.75;
-}
-
-/* Navigation */
-nav {
-background: #233b32;
-color: #ffffff;
-padding: 18px 8%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-gap: 12px;
-}
-
-nav .brand {
-font-size: 23px;
-font-weight: bold;
-}
-
-nav a {
-color: #ffffff;
-text-decoration: none;
-margin-left: 20px;
-font-size: 16px;
-}
-
-nav a:hover {
-color: #c7d9bd;
-}
-
-/* Main heading */
-.hero {
-background: #dfe8dc;
-padding: 65px 8% 55px;
-border-bottom: 1px solid #ccd8cb;
-}
-
-.eyebrow {
-color: #47684f;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 14px;
-font-weight: bold;
-}
-
-.hero h1 {
-font-size: clamp(38px, 6vw, 62px);
-line-height: 1.15;
-margin: 15px 0;
-color: #233b32;
-}
-
-.hero p {
-max-width: 720px;
-font-size: 19px;
-}
-
-.student-info {
-margin-top: 22px;
-color: #53675a;
-font-size: 16px;
-}
-
-/* Main content */
-main {
-max-width: 1100px;
-margin: 0 auto;
-padding: 45px 24px 70px;
-}
-
-.intro {
-max-width: 800px;
-margin-bottom: 35px;
-}
-
-.intro h2,
-.closing h2 {
-font-size: 30px;
-color: #233b32;
-margin-bottom: 12px;
-}
-
-.section-label {
-color: #64816a;
-font-size: 14px;
-text-transform: uppercase;
-letter-spacing: 1.5px;
-font-weight: bold;
-}
-
-/* Ecosystem Studies & Satellite Background Integration */
-.reflection-grid-wrapper {
-position: relative;
-background: linear-gradient(rgba(35, 59, 50, 0.88), rgba(35, 59, 50, 0.88)), url('assets/satellite_imagery.jpg');
-background-size: cover;
-background-position: center;
-padding: 45px 30px;
-border-radius: 16px;
-margin-bottom: 55px;
-box-shadow: 0 10px 30px rgba(35, 59, 50, 0.12);
-}
-
-.reflection-grid-wrapper .section-label {
-color: #c7d9bd;
-}
-
-.reflection-grid-wrapper h2 {
-color: #ffffff;
-font-size: 30px;
-margin-bottom: 24px;
-}
-
-/* Reflection cards */
-.reflection-grid {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 22px;
-}
-
-.reflection-card {
-background: #ffffff;
-padding: 28px;
-border: 1px solid #dce3db;
-border-radius: 12px;
-box-shadow: 0 5px 18px rgba(35, 59, 50, 0.08);
-}
-
-.number {
-color: #6d886f;
-font-size: 15px;
-letter-spacing: 2px;
-font-weight: bold;
-}
-
-.reflection-card h3 {
-font-size: 24px;
-line-height: 1.35;
-margin: 12px 0;
-color: #294b38;
-}
-
-.reflection-card p {
-margin-bottom: 13px;
-}
-
-.learning-note {
-background: #edf3eb;
-border-left: 3px solid #64816a;
-padding: 12px 15px;
-margin-top: 18px;
-font-size: 16px;
-}
-
-.learning-note strong {
-display: block;
-margin-bottom: 4px;
-color: #294b38;
-}
-
-/* Evidence section */
-.evidence {
-margin-top: 55px;
-}
-
-.evidence h2 {
-font-size: 30px;
-margin: 10px 0;
-}
-
-.evidence-intro {
-max-width: 750px;
-margin-bottom: 24px;
-}
-
-.evidence-grid {
-display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
-gap: 22px;
-}
-
-.evidence-item {
-background: #ffffff;
-border: 1px solid #dce3db;
-border-radius: 12px;
-overflow: hidden;
-}
-
-.evidence-item img {
-display: block;
-width: 100%;
-aspect-ratio: 16 / 10;
-object-fit: cover;
-background: #e5e8e2;
-}
-
-.evidence-caption {
-padding: 18px 20px;
-}
-
-.evidence-caption h3 {
-font-size: 21px;
-margin-bottom: 7px;
-color: #294b38;
-}
-
-.evidence-caption p {
-font-size: 16px;
-}
-
-/* Closing reflection */
-.closing {
-margin-top: 55px;
-padding: 35px;
-background: #233b32;
-color: #f5f5f2;
-border-radius: 14px;
-}
-
-.closing h2 {
-color: #ffffff;
-}
-
-.closing .section-label {
-color: #c7d9bd;
-}
-
-.closing p {
-margin-top: 15px;
-}
-
-.future-goal {
-margin-top: 22px;
-padding-top: 18px;
-border-top: 1px solid #536c5d;
-}
-
-/* Footer */
-footer {
-background: #e5e9e2;
-text-align: center;
-padding: 24px;
-color: #526258;
-font-size: 15px;
-}
-
-footer a {
-color: #294b38;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-nav {
-padding: 18px 6%;
-}
-
-nav a {
-margin: 0 12px 0 0;
-}
-
-.hero {
-padding: 45px 6%;
-}
-
-main {
-padding: 35px 18px 50px;
-}
-
-.reflection-grid,
-.evidence-grid {
-grid-template-columns: 1fr;
-}
-
-.reflection-card {
-padding: 23px;
-}
-
-.reflection-grid-wrapper {
-padding: 25px 15px;
-}
-
-.closing {
-padding: 25px;
-}
-}
-</style>
-</head>
-
-<body>
-
-<!-- Navigation -->
-<nav>
-<div class="brand">AS. | Geoinformatics</div>
-
-<div>
-<a href="index.html">Home</a>
-<a href="reflection.html">Reflection</a>
-<a href="projects.html">Projects</a>
-</div>
-</nav>
-
-<!-- Page introduction -->
-<header class="hero">
-<div class="eyebrow">GEO 1102 · Semester Reflection</div>
-
-<h1>Learning to See<br>Beyond the Map.</h1>
-
-<p>
-A reflection on my learning journey in the Fundamentals of
-Geospatial Science and Technology, exploring how GIS,
-cartography, field observations and critical thinking have
-shaped my understanding of spatial information.
-</p>
-
-<div class="student-info">
-<strong>Amisha Sahay</strong> · MSc Geoinformatics
-</div>
-</header>
-
-<main>
-
-<!-- Introduction -->
-<section class="intro">
-<div class="section-label">Looking back</div>
-
-<h2>More than a collection of maps</h2>
-
-<p>
-At the beginning of this course, I viewed maps primarily
-as visual representations of geographical information.
-Through practical exercises, thematic mapping, field
-data collection and the StoryMap assignment, I began
-to understand that creating a meaningful map involves
-much more than presenting locations. It requires
-appropriate data, thoughtful design, careful analysis
-and responsible interpretation.
-</p>
-
-<p>
-The following reflections highlight the experiences
-that challenged my assumptions, developed my skills
-and influenced how I approach geospatial information.
-</p>
-</section>
-
-<!-- Reflection entries with Ecosystem Satellite Background -->
-<div class="reflection-grid-wrapper">
-<div class="section-label">Ecosystem Studies & Spatial Analysis</div>
-<h2>Core Reflections</h2>
-
-<section class="reflection-grid">
-
-<article class="reflection-card">
-<div class="number">REFLECTION 01</div>
-
-<h3>The Hidden Monsoon Jewel</h3>
-
-<p>
-Creating my StoryMap, "The Hidden Monsoon Jewel",
-helped me explore the relationship between Rugda
-mushrooms, Sal forests and the livelihoods and
-traditions of communities in Jharkhand. I combined
-geographical information, thematic maps and
-narrative elements to communicate a subject that
-connects ecology, culture and local economies.
-</p>
-
-<p>
-This project made me realise that maps are not
-merely illustrations added to a presentation.
-Their spatial patterns, symbols, labels and extent
-can guide the reader towards a better understanding
-of a geographical issue. I also recognised the
-importance of connecting mapped information with
-reliable sources and acknowledging the limitations
-of the available data.
-</p>
-
-<div class="learning-note">
-<strong>What changed?</strong>
-I began to see cartography as a way of communicating
-geographical relationships, not just displaying data.
-</div>
-</article>
-
-<article class="reflection-card">
-<div class="number">REFLECTION 02</div>
-
-<h3>From Field Observations to Spatial Data</h3>
-
-<p>
-Working with field data collection introduced me
-to the importance of recording geographical
-observations systematically. Tools such as GPS-based
-data collection and Epicollect help connect
-observations to locations, making them useful for
-mapping and further analysis.
-</p>
-
-<p>
-I learned that collecting a coordinate or entering
-an attribute is only the beginning of the process.
-Location accuracy, consistent recording, suitable
-attributes and verification are equally important.
-Errors or missing information in the field can
-affect the reliability of the final map and any
-conclusions drawn from it.
-</p>
-
-<div class="learning-note">
-<strong>What changed?</strong>
-I became more aware that reliable spatial analysis
-begins with careful data collection and validation.
-</div>
-</article>
-
-<article class="reflection-card">
-<div class="number">REFLECTION 03</div>
-
-<h3>Questioning AI-Generated Information</h3>
-
-<p>
-My assignment on mangrove loss and coastal
-vulnerability in the Sundarbans challenged me to
-evaluate information generated by artificial
-intelligence. I examined 12 claims against
-scientific literature. Six were supported, while
-six were only partially supported and required
-additional context or qualification.
-</p>
-
-<p>
-This exercise taught me that an answer can sound
-convincing without presenting the complete
-scientific picture. Ecological processes are
-complex, and relationships between environmental
-change and ecosystem responses cannot always be
-explained through a single cause. Peer-reviewed
-research helped me distinguish supported evidence
-from claims that needed more careful wording.
-</p>
-
-<div class="learning-note">
-<strong>What changed?</strong>
-I now understand AI as a supporting tool rather
-than a replacement for scientific evidence,
-verification and independent thinking.
-</div>
-</article>
-
-<article class="reflection-card">
-<div class="number">REFLECTION 04</div>
-
-<h3>Learning Through Challenges</h3>
-
-<p>
-One of the most important lessons in learning
-geospatial techniques is recognising that a
-workflow or map is not automatically correct
-simply because the software produces an output.
-Coordinate systems, data quality, classification
-choices and map design all influence the result.
-</p>
-
-<p>
-When I encounter a difficulty, I need to examine
-the data, review the steps I followed and check
-whether the result makes geographical sense.
-I also need to distinguish between what a map
-directly demonstrates and what I am interpreting
-from it. This is especially important when
-communicating environmental change.
-</p>
-
-<div class="learning-note">
-<strong>My next step</strong>
-I will document errors, verify intermediate
-results and explain the reasoning behind my
-analytical and cartographic choices.
-</div>
-</article>
-
-</section>
-</div>
-
-<!-- Evidence of learning -->
-<section class="evidence">
-<div class="section-label">Learning in practice</div>
-
-<h2>Evidence of my learning</h2>
-
-<p class="evidence-intro">
-These examples connect my reflections with practical
-work. Each image should demonstrate a technique,
-decision or result that contributed to my learning.
-</p>
-
-<div class="evidence-grid">
-
-<article class="evidence-item">
-<img
-src="images/rugda-storymap.png"
-alt="Screenshot of The Hidden Monsoon Jewel StoryMap"
-loading="lazy"
->
-
-<div class="evidence-caption">
-<h3>StoryMap and Cartography</h3>
-<p>
-My StoryMap on Rugda and the Sal forests
-of Jharkhand demonstrates how spatial
-information and narrative can be combined
-to communicate an environmental and
-cultural topic.
-</p>
-</div>
-</article>
-
-<article class="evidence-item">
-<img
-src="images/field-survey.png"
-alt="Screenshot of field data collection or an attribute table"
-loading="lazy"
->
-
-<div class="evidence-caption">
-<h3>Field Data Collection</h3>
-<p>
-A screenshot of my actual field survey,
-collected coordinates or attribute table
-can demonstrate how geographical
-observations are recorded and prepared
-for spatial analysis.
-</p>
-</div>
-</article>
-
-<article class="evidence-item">
-<img
-src="images/mangrove-analysis.png"
-alt="Evidence from the mangrove loss and coastal vulnerability assignment"
-loading="lazy"
->
-
-<div class="evidence-caption">
-<h3>Critical Evaluation</h3>
-<p>
-My mangrove assignment demonstrates the
-importance of comparing AI-generated
-information with scientific literature
-before accepting environmental claims.
-</p>
-</div>
-</article>
-
-<article class="evidence-item">
-<img
-src="images/gis-practical.png"
-alt="Screenshot of a GIS practical or map that was corrected"
-loading="lazy"
->
-
-<div class="evidence-caption">
-<h3>Learning from Practice</h3>
-<p>
-Add an actual GIS practical, an analysis
-step or a corrected map to show how I
-applied geospatial techniques and
-improved my workflow.
-</p>
-</div>
-</article>
-
-</div>
-</section>
-
-<!-- Final reflection -->
-<section class="closing">
-<div class="section-label">Looking ahead</div>
-
-<h2>How my perspective has changed</h2>
-
-<p>
-This course has helped me move beyond the idea that
-maps are simply finished products. I now understand
-them as representations built through a sequence of
-decisions about data, coordinate systems, scale,
-classification, symbology and interpretation.
-Each decision can influence the message communicated
-by a map.
-</p>
-
-<p>
-I have also learned that geospatial technology is
-most useful when technical skills are combined with
-critical thinking. Whether I am creating a StoryMap,
-analysing environmental patterns or collecting field
-observations, I need to question the quality of the
-information, verify the results and communicate
-limitations honestly.
-</p>
-
-<p>
-As I continue my MSc in Geoinformatics, I want to
-strengthen my skills in GIS, remote sensing,
-spatial analysis and cartography. Most importantly,
-I want to become more confident in using spatial
-evidence to understand real-world problems and
-communicate meaningful geographical insights.
-</p>
-
-<div class="future-goal">
-<strong>My takeaway:</strong>
-A good map does not simply show where something is.
-It helps us ask better questions about why it is
-there, how it changes and what that means.
-</div>
-</section>
-
-</main>
-
-<footer>
-<p>Amisha Sahay | MSc Geoinformatics</p>
-<p>Fundamentals of Geospatial Science and Technology</p>
-<p>
-<a href="index.html">Return to Portfolio Home</a>
-</p>
-</footer>
 
 </body>
 </html>
