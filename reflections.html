@@ -656,7 +656,7 @@
     </div>
 </details>
 
-  <!-- ================= TECHNIQUES IN IMAGE INTERPRETATION AND REMOTE SENSING ================= -->
+<!-- ================= TECHNIQUES IN IMAGE INTERPRETATION AND REMOTE SENSING ================= -->
 <details class="subject-accordion" id="tiirs" open>
   <summary>🛰️ Techniques in Image Interpretation and Remote Sensing (GEO 1111)</summary>
   <div class="accordion-content">
@@ -669,7 +669,7 @@
       </p>
 
       <p style="margin-top: 12px;">
-        The practical I enjoyed doing was the digitization of the UAV imagery[cite: 4]. It was difficult to digitize it at the beginning as I was still learning about the various editing tools provided by the ArcGIS Pro[cite: 4] but as I got a hang of it and seeing the final map felt very rewarding. While learning I had done a lot of mistakes which I could not rectify before the submission but re-doing it gave me the chance to properly analyze my mistakes and present it better by re-working of the polygons that were not digitized in the previous submission and adding their information and area calculation in the attribute table for interpretation. This practical was a really great enlightening experience in terms of discovering the ArcGIS software tools and their application.
+        The practical I enjoyed doing was the digitization of the UAV imagery. It was difficult to digitize it at the beginning as I was still learning about the various editing tools provided by the ArcGIS Pro but as I got a hang of it and seeing the final map felt very rewarding. While learning I had done a lot of mistakes which I could not rectify before the submission but re-doing it gave me the chance to properly analyze my mistakes and present it better by re-working of the polygons that were not digitized in the previous submission and adding their information and area calculation in the attribute table for interpretation. This practical was a really great enlightening experience in terms of discovering the ArcGIS software tools and their application.
       </p>
 
       <div class="learning-note" style="margin-top: 15px;">
@@ -678,28 +678,63 @@
       </div>
     </div>
 
-    <!-- Evidence of Learning (2 Maps Layout Space) -->
+    <!-- Evidence of Learning (Tailored Horizontal & Vertical Map Layouts) -->
     <div class="section-card" style="margin-top: 25px;">
       <div class="section-label">Practical Evidence</div>
       <h2>UAV & LULC Mapping Layouts</h2>
-      <div class="evidence-grid" style="margin-top: 15px;">
-        <div class="evidence-item">
-          <img src="Layout.jpg" alt="Land Use Land Cover Map using Drone Imagery" loading="lazy">
+      
+      <!-- Custom CSS override specifically for mixed horizontal/vertical map containers -->
+      <style>
+        .tiirs-evidence-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 22px;
+          margin-top: 15px;
+          align-items: start;
+        }
+        .tiirs-item img.img-horizontal {
+          width: 100%;
+          aspect-ratio: 16 / 11;
+          object-fit: contain;
+          background: #f0f2ee;
+          padding: 8px;
+        }
+        .tiirs-item img.img-vertical {
+          width: 100%;
+          aspect-ratio: 1 / 1.35;
+          object-fit: contain;
+          background: #f0f2ee;
+          padding: 8px;
+        }
+        @media (max-width: 700px) {
+          .tiirs-evidence-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+
+      <div class="tiirs-evidence-grid">
+        <!-- Horizontal Map Item -->
+        <div class="evidence-item tiirs-item">
+          <img src="assets/images/Layout2.jpg" alt="Land Use Land Cover Map using Drone Imagery - Horizontal Layout" class="img-horizontal" loading="lazy">
           <div class="evidence-caption">
-            <h3 style="color:var(--dark-sage);">Land Use Land Cover Map using Drone Imagery</h3>
+            <h3 style="color:var(--dark-sage);">Land Use Land Cover Map (Horizontal Layout)</h3>
             <p>Kulathummal Village, Thiruvananthapuram, Kerala. Detailed UAV polygon digitization with classified land cover classes and legend.</p>
           </div>
         </div>
-        <div class="evidence-item">
-          <img src="assets/images/Layout2.jpg" alt="Land Use Land Cover Map using Drone Imagery" loading="lazy">
+
+        <!-- Vertical Map Item -->
+        <div class="evidence-item tiirs-item">
+          <img src="assets/images/Layout.jpg" alt="Land Use Land Cover Map - Vertical Layout" class="img-vertical" loading="lazy">
           <div class="evidence-caption">
-            <h3 style="color:var(--dark-sage);">Land Use Land Cover Map using Drone Imagery</h3>
+            <h3 style="color:var(--dark-sage);">Land Use Land Cover Map (Vertical Layout)</h3>
             <p>Devadurga, Raichur, Karnataka. Detailed UAV polygon digitization with classified land cover classes and legend.</p>
           </div>
         </div>
       </div>
     </div>
- </div>
+
+  </div>
 </details>
 
   <!-- ================= PROGRAMMING IN GIS (PGIS) ================= -->
