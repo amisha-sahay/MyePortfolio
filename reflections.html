@@ -392,21 +392,23 @@
                 Comprehensive documentation of coursework, field observations, and spatial analysis modules.
             </p>
         </div>
-        <!-- ==================== 1. ECOSYSTEM STUDIES ==================== -->
-        <details class="subject-accordion" id="ecosystem">
-          <summary>🌱 Ecosystem Studies (EST 1101)</summary>
-             <div class="accordion-content ecosystem-section-bg" style="background-image: url('assets/images/est.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
-           <div class="section-card">
+        <!-- ==================== 1. ECOSYSTEM STUDIES ==================== -->
+<details class="subject-accordion" id="ecosystem">
+    <summary>🌱 Ecosystem Studies (EST 1101)</summary>
+    <div class="accordion-content ecosystem-section-bg" style="background-image: url('assets/images/est.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <!-- Reflection Overview Card -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
             <div class="section-label">Reflection Overview</div>
             <h2 style="color:var(--dark-sage); margin-bottom: 10px;">Ecology, Evolution & Conservation Dynamics</h2>
             <p>Reflecting on structure-function relationships in ecosystem ecology, trophic energy transfers, and biogeochemical nutrient cycling.</p>
-          </div>
+        </div>
 
-        <!-- Section: Conceptual Understanding -->
-            <div class="section-card">
-             <h2>1. Conceptual Understanding & Dynamics</h2>
-              <div class="grid-container">
+        <!-- 1. Conceptual Understanding & Dynamics -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>1. Conceptual Understanding & Dynamics</h2>
+            <div class="grid-container">
                 <div class="grid-item">
                     <h3>Diversity & Richness</h3>
                     <p><strong>Diversity:</strong> Refers to species abundance and evenness.<br>
@@ -415,8 +417,8 @@
                 <div class="grid-item">
                     <h3>Holdridge Life Zone & Classification</h3>
                     <p>Global forest classifications utilize indices like the Holdridge Life Zone model, governed by <em>Annual Precipitation, Humidity, and Temperature</em>.</p>
-                 </div>
-              </div>
+                </div>
+            </div>
 
             <h3 style="margin-top:25px; color:var(--dark-sage);">Infographic: Trophic Energy Flow</h3>
             <div class="pyramid-container">
@@ -428,8 +430,8 @@
             <p style="font-size: 0.9rem; text-align: center; color: var(--dark-sage);"><em>Figure: 10% Energy Transfer Efficiency</em></p>
         </div>
 
-        <!-- Section: Evolution & Speciation -->
-        <div class="section-card">
+        <!-- 2. Evolution, Speciation & Relict Species -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
             <h2>2. Evolution, Speciation & Relict Species</h2>
             <div class="grid-container">
                 <div class="grid-item">
@@ -447,8 +449,8 @@
             </div>
         </div>
 
-        <!-- Section: Biogeography -->
-        <div class="section-card">
+        <!-- 3. Biogeography & Biodiversity Patterns -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
             <h2>3. Biogeography & Biodiversity Patterns</h2>
             <div class="grid-container">
                 <div class="grid-item">
@@ -462,52 +464,86 @@
             </div>
         </div>
 
-        <!-- Section: Field Work Observations (Text Left, Photo Right) -->
-        <div class="section-card">
+        <!-- 4. Field Work Observations & Ecosystem Comparisons -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
             <h2>4. Field Work Observations & Ecosystem Comparisons</h2>
-            <p style="margin-top: 10px;">Evaluating three distinct ecosystems, their adaptations, and environmental vulnerabilities.</p>
+            <p style="margin-top: 10px; margin-bottom: 20px;">Evaluating three distinct ecosystems, their adaptations, and environmental vulnerabilities.</p>
 
-            <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 30px;">
+            <!-- Side-by-side grid for the 3 ecosystem cards -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
                 
                 <!-- A. Pashan Lake -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; background: rgba(250, 250, 250, 0.95); padding: 20px; border-radius: 8px; border: 1px solid #E3DFD4;">
+                <div style="background: #FAFAFA; padding: 15px; border-radius: 8px; border: 1px solid #E3DFD4; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="color: var(--dark-sage); margin-bottom: 8px;">A. Pashan Lake (Wetland & Aquatic Ecosystem)</h3>
-                        <p>An artificial wetland ecosystem characterized by shallow lentic waters and rich migratory bird habitats.</p>
+                        <h3 style="color: var(--dark-sage); margin-bottom: 8px; font-size: 1.1rem;">A. Pashan Lake</h3>
+                        <p style="font-size: 0.92rem; margin-bottom: 12px;">Wetland & aquatic ecosystem characterized by shallow lentic waters and rich migratory bird habitats.</p>
                     </div>
-                    <div style="text-align: right;">
-                        <img src="assets/images/p1.png" alt="Pashan Lake Field Photo" style="width: 100%; border-radius: 8px;" />
+                    <div style="text-align: center;">
+                        <img src="assets/images/p1.png" alt="Pashan Lake Field Photo" style="width: 75%; height: auto; border-radius: 6px;" />
                     </div>
                 </div>
 
                 <!-- B. Mayureshwar Wildlife Sanctuary -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; background: rgba(250, 250, 250, 0.95); padding: 20px; border-radius: 8px; border: 1px solid #E3DFD4;">
+                <div style="background: #FAFAFA; padding: 15px; border-radius: 8px; border: 1px solid #E3DFD4; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="color: var(--dark-sage); margin-bottom: 8px;">B. Mayureshwar Wildlife Sanctuary, Supe (Grassland Ecosystem)</h3>
-                        <p>Grassland with loose topsoil and basaltic bedrock resulting in poor moisture retention and soil erosion vulnerability.</p>
+                        <h3 style="color: var(--dark-sage); margin-bottom: 8px; font-size: 1.1rem;">B. Mayureshwar Sanctuary</h3>
+                        <p style="font-size: 0.92rem; margin-bottom: 12px;">Grassland with loose topsoil and basaltic bedrock resulting in poor moisture retention and erosion vulnerability.</p>
                     </div>
-                    <div style="text-align: right;">
-                        <img src="assets/images/s2.png" alt="Supe Field Photo" style="width: 100%; border-radius: 8px;" />
+                    <div style="text-align: center;">
+                        <img src="assets/images/s2.png" alt="Supe Field Photo" style="width: 75%; height: auto; border-radius: 6px;" />
                     </div>
                 </div>
 
                 <!-- C. Mulshi -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; background: rgba(250, 250, 250, 0.95); padding: 20px; border-radius: 8px; border: 1px solid #E3DFD4;">
+                <div style="background: #FAFAFA; padding: 15px; border-radius: 8px; border: 1px solid #E3DFD4; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <h3 style="color: var(--dark-sage); margin-bottom: 8px;">C. Mulshi (Montane Catchment & Forest Ecosystem)</h3>
-                        <p>Ecologically rich catchment area supplying vital water resources to the Mulshi Dam reservoir.</p>
+                        <h3 style="color: var(--dark-sage); margin-bottom: 8px; font-size: 1.1rem;">C. Mulshi Catchment</h3>
+                        <p style="font-size: 0.92rem; margin-bottom: 12px;">Montane catchment & forest ecosystem supplying vital water resources to the Mulshi Dam reservoir.</p>
                     </div>
-                    <div style="text-align: right;">
-                        <img src="assets/images/m1.png" alt="Mulshi Field Photo" style="width: 100%; border-radius: 8px;" />
+                    <div style="text-align: center;">
+                        <img src="assets/images/m1.png" alt="Mulshi Field Photo" style="width: 75%; height: auto; border-radius: 6px;" />
                     </div>
                 </div>
 
             </div>
         </div>
 
+        <!-- 5. Ecosystem Services & Valuation -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>5. Ecosystem Services & Valuation</h2>
+            <p>Examining provisioning, regulating, cultural, and supporting services provided by natural systems, and methods for economic ecological valuation.</p>
+        </div>
+
+        <!-- 6. Population Ecology & Dynamics -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>6. Population Ecology & Dynamics</h2>
+            <p>Analyzing exponential and logistic population growth models, carrying capacity ($K$), density-dependent, and density-independent limiting factors.</p>
+        </div>
+
+        <!-- 7. Community Interactions & Succession -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>7. Community Interactions & Succession</h2>
+            <p>Assessing interspecific competition, predation, symbiosis, keystone species roles, and primary vs. secondary ecological succession pathways.</p>
+        </div>
+
+        <!-- 8. Conservation Management & Policy -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>8. Conservation Management & Policy</h2>
+            <p>Reviewing protected area design, habitat fragmentation mitigation, biodiversity hotspots, and policy frameworks for sustainable resource management.</p>
+        </div>
+
+        <!-- 9. Nilgiri Tahr Presentation Reflection -->
+        <div class="section-card" style="background: rgba(255, 255, 255, 0.95);">
+            <h2>9. Nilgiri Tahr Presentation Reflection</h2>
+            <p style="margin-bottom: 15px;">Investigating the endangered status, shola-grassland habitat requirements, and targeted conservation strategies for *Nilgiritragus hylocrius* in the Western Ghats.</p>
+            <div style="position: relative; width: 100%; height: 500px; border: 1px solid #E3DFD4; border-radius: 8px; overflow: hidden; background: #FFF;">
+                <!-- Non-downloadable secure view embedding iframe -->
+                <iframe src="assets/docs/nilgiri_tahr.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width: 100%; height: 100%; border: none;" title="Nilgiri Tahr Presentation Reflection"></iframe>
+            </div>
+        </div>
+
     </div>
 </details>
-
     <!-- ================= STATISTICAL METHODS (STATS) ================= -->
 <details class="subject-accordion" id="statistical-methods">
   <summary>📊 Statistical Methods (EST 1104)</summary>
